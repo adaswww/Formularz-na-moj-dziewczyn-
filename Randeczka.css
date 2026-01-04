@@ -127,9 +127,13 @@ form {
   padding: 10px;
 }
 
-.blond, .braz, .czarny, .rudy, .inny, .niebieskie, .zielone, .brazowe, .inne, .tak, .nie, .zalezy, .ekstrawertyczna, .introwertyczna, .ambiwertyczna, .czasami, .jedno, .dwa, .trzy, .cztery {
+.blond, .braz, .czarny, .rudy, .inny, .niebieskie, .zielone, .brazowe, .inne, .tak, .nie, .zalezy, .ekstrawertyczna, .introwertyczna, .ambiwertyczna, .czasami, .jedno, .dwa, .trzy, .cztery{
       font-family: Comic Sans MS;
       font-size: 1.5em;
+}
+.rodo{
+  font-family: Comic Sans MS;
+      font-size: 1em;
 }
 
 

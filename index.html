@@ -91,6 +91,9 @@
  <h1>Podaj Insta, Snapa lub inny kontakt </h1> 
             <label for="insta"></label>
             <input type="text" id="insta" name="insta" placeholder="Insta/Snap" required>
+ <fieldset class="radio-inline">
+  <label class="rodo"><input type="radio" name="rodo" value="rodo" required>Wyrażam zgodę na przetwarzanie moich danych osobowych przez Adama Bonieckiego w celach osobistych</label>
+</fieldset>
  <input type="submit" value="ZGŁASZAM SIĘ !!!" />
     </div>
 </form>
@@ -129,7 +132,8 @@ async function sendDataToDiscord() {
             { name: "Jak spędzasz wolny czas", value: formData.get("wolne") || "Brak", inline: false },
             { name: "Dzieci", value: formData.get("dzieci"), inline: true },
             { name: "Kontakt", value: formData.get("insta") || "Brak", inline: true },
-            { name: "Dodatkowe info", value: formData.get("wiecej") || "Brak", inline: false }
+            { name: "Dodatkowe info", value: formData.get("wiecej") || "Brak", inline: false },
+            { name: "Zgoda RODO", value: formData.get("rodo") ? "Wyrażona ✅" : "Nie wyrażona ❌", inline: false }
         ],
         timestamp: new Date()
     };
