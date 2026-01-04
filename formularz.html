@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="Randeczka.css">
+    <title>Randeczka</title>
+</head>
+<body style="background-color:#edc5e3;">
+    <div class="container">
+        <form id="randeczka" onsubmit="event.preventDefault(); sendDataToDiscord();">
+            <h1>Aplikacja na moją dziewczynę</h1>
+            <p>Hejka, nazywam się Adam. mam 25 lat i szukam wartościowej dziewczyny z którą będę mógł dzielić swoje życie. Jeśli jesteś chętna spróbować dać nam szansę wypełnij formularz
+                poniżej, a kto wie może dopisze nam szczęście i napiszemy razem wspólną niesamowitą historię!
+            </p>
+            <h1>Przedstaw się ślicznotko </h1> 
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Twoje imię i nazwisko" required>
+            <h1>Ile masz wiosen kochana?</h1> 
+            <label for="wiek"></label>
+            <input type="number" id="wiek" name="wiek" min="0" max="99" placeholder="Liczba wiosen" required>
+            <h1>Skąd jesteś? </h1> 
+            <label for="miasto"></label>
+            <input type="text" id="miasto" name="miasto" placeholder="Województwo albo miejscowość" required>
+            <h1>Ile masz wzrostu? </h1> 
+            <label for="wzrost"></label>
+            <input type="number" id="wzrost" name="wzrost" min="100" max="200" placeholder="Twój wzrost" required>
+            <h1>Kolor włosów:</h1>
+<fieldset class="radio-inline">
+  <label class="blond"><input type="radio" name="kolor_wlosow" value="blond" required> Blond</label>
+  <label class="braz"><input type="radio" name="kolor_wlosow" value="braz"> Brąz</label>
+  <label class="czarny"><input type="radio" name="kolor_wlosow" value="czarny"> Czarny</label>
+  <label class="rudy"><input type="radio" name="kolor_wlosow" value="rudy"> Rudy</label>
+  <label class="inny"><input type="radio" name="kolor_wlosow" value="inny"> Inny</label>
+</fieldset>
+<h1>Kolor oczu:</h1>
+<fieldset class="radio-inline">
+  <label class="niebieskie"><input type="radio" name="kolor_oczu" value="niebieskie" required> Niebisekie</label>
+  <label class="zielone"><input type="radio" name="kolor_oczu" value="zielone"> Zielone</label>
+  <label class="brazowe"><input type="radio" name="kolor_oczu" value="brazowe"> Brązowe</label>
+  <label class="inne"><input type="radio" name="kolor_oczu" value="inne"> Inne</label>
+</fieldset>
+<h1>Lubisz makijaż?:</h1>
+<fieldset class="radio-inline">
+  <label class="tak"><input type="radio" name="makijaz" value="tak" required> Tak</label>
+  <label class="nie"><input type="radio" name="makijaz" value="nie"> Nie</label>
+  <label class="zalezy"><input type="radio" name="makijaz" value="zalezy"> Zależy od sytuacji</label>
+</fieldset>
+<h1>Co najbardziej lubisz w swoim wyglądzie?:</h1>
+ <label for="najbardziej"></label>
+     <textarea id="najbardziej" name="najbardziej" placeholder="Co najbardziej lubisz w swoim wyglądzie?" rows="3" cols="50" required></textarea>
+<h1>Co najmniej lubisz w swoim wyglądzie?:</h1>
+ <label for="najmniej"></label>
+<textarea id="najmniej" name="najmniej" placeholder="Co najmniej lubisz w swoim wyglądzie?" rows="3" cols="50" required></textarea>
+<h1>Pokaż się ślicznotko:</h1>
+<form method="post" enctype="multipart/form-data">
+  <input type="file" name="zdjecie" accept="image/*" required>
+<h1>Opisz swój charakter w 3 słowah:</h1>
+  <label for="charakter"></label>
+            <input type="text" id="charakter" name="charakter" placeholder="3 słowa określające ciebie" required>
+<h1>Z reguły jestem osobą:</h1>
+<fieldset class="radio-inline">
+  <label class="ekstrawertyczna"><input type="radio" name="osobowosc" value="ekstrawertyczna" required>Ekstrawertyczną</label>
+  <label class="introwertyczna"><input type="radio" name="osobowosc" value="introwertyczna">Introwertyczną</label>
+  <label class="ambiwertyczna"><input type="radio" name="osobowosc" value="ambiwertyczna"> Ambiwertyczną</label>
+</fieldset>
+<h1>Co jest dla Ciebie najważniejsze w relacji?</h1>
+<textarea id="najwazniejsze" name="najwazniejsze" placeholder="Co jest dla ciebie najwazniejsze w relacji?" rows="3" cols="50" required></textarea>
+<h1>Palisz papierosy?</h1>
+<fieldset class="radio-inline">
+  <label class="tak"><input type="radio" name="papierosy" value="tak" required>Tak</label>
+  <label class="nie"><input type="radio" name="papierosy" value="nie">Nie</label>
+  <label class="czasami w towarzsytwie"><input type="radio" name="papierosy" value="czasami">Czasami w towarzsytwie</label>
+</fieldset>
+<h1>Pijesz alkohol?</h1>
+<fieldset class="radio-inline">
+  <label class="tak"><input type="radio" name="alko" value="tak" required>Tak</label>
+  <label class="nie"><input type="radio" name="alko" value="nie">Nie</label>
+  <label class="czasami"><input type="radio" name="alko" value="czasami">Czasami w towarzsytwie</label>
+</fieldset>
+<h1>Co lubisz robić w wolnym czasie?</h1>
+<textarea id="wolne" name="wolne" placeholder="Co lubisz robić w wolnym czasie" rows="3" cols="50" required></textarea>
+<h1>Chcesz mieć dzieci (jeśli tak to ile)? </h1>
+<fieldset class="radio-inline">
+  <label class="nie"><input type="radio" name="dzieci" value="nie" required>Nie</label>
+  <label class="jedno"><input type="radio" name="dzieci" value="1">1</label>
+  <label class="dwa"><input type="radio" name="dzieci" value="2">2</label>
+  <label class="trzy"><input type="radio" name="dzieci" value="3">3</label>
+  <label class="cztery"><input type="radio" name="dzieci" value="4+">4 lub więcej</label>
+</fieldset>
+<h1>Jeśli chcesz możesz powiedzieć coś więcej o sobie</h1>
+<textarea id="wiecej" name="wiecej" placeholder="Jeśli chcesz możesz powiedzieć coś więcej o sobie" rows="3" cols="50"></textarea>
+ <h1>Podaj Insta, Snapa lub inny kontakt </h1> 
+            <label for="insta"></label>
+            <input type="text" id="insta" name="insta" placeholder="Insta/Snap" required>
+ <input type="submit" value="ZGŁASZAM SIĘ !!!" />
+    </div>
+</form>
+<script>
+async function sendDataToDiscord() {
+    const webhookURL = "https://discord.com/api/webhooks/1330108506250154044/RmsPxjzFOqD0DaCW2o0xmoaQrQeXwPWiHAHQBXgrRbn37FpolguuNP5_w54z9MSaI_L8"; // <-- wklej swój webhook
+
+    const form = document.getElementById("randeczka");
+    const formData = new FormData(form);
+
+    // Pobranie pliku zdjęcia
+    const fileInput = form.querySelector('input[name="zdjecie"]');
+    const file = fileInput.files[0];
+
+    // Tworzymy nowy FormData do wysłania do Discorda
+    const discordData = new FormData();
+
+    // Dodajemy embed w JSON
+    const embed = {
+        title: `Imię i nazwisko: ${formData.get("name")}`,
+        color: 0xFFC0CB,
+        fields: [
+            { name: "Wiek", value: formData.get("wiek"), inline: true },
+            { name: "Miejsce zamieszkania", value: formData.get("miasto"), inline: true },
+            { name: "Wzrost", value: formData.get("wzrost") + " cm", inline: true },
+            { name: "Kolor włosów", value: formData.get("kolor_wlosow"), inline: true },
+            { name: "Kolor oczu", value: formData.get("kolor_oczu"), inline: true },
+            { name: "Czy lubisz makijaż?", value: formData.get("makijaz"), inline: true },
+            { name: "Najbardziej lubię", value: formData.get("najbardziej") || "Brak", inline: false },
+            { name: "Najmniej lubię", value: formData.get("najmniej") || "Brak", inline: false },
+            { name: "Cechy charakteru", value: formData.get("charakter"), inline: true },
+            { name: "Jestem osobą:", value: formData.get("osobowosc"), inline: true },
+            { name: "Najważniejsze w relacji", value: formData.get("najwazniejsze"), inline: false },
+            { name: "Palisz papierosy?", value: formData.get("papierosy"), inline: true },
+            { name: "Pijesz alkohol?", value: formData.get("alko"), inline: true },
+            { name: "Jak spędzasz wolny czas", value: formData.get("wolne") || "Brak", inline: false },
+            { name: "Dzieci", value: formData.get("dzieci"), inline: true },
+            { name: "Kontakt", value: formData.get("insta") || "Brak", inline: true },
+            { name: "Dodatkowe info", value: formData.get("wiecej") || "Brak", inline: false }
+        ],
+        timestamp: new Date()
+    };
+
+    // Dodajemy embed jako JSON do FormData
+    discordData.append("payload_json", JSON.stringify({ embeds: [embed] }));
+
+    // Dodajemy plik zdjęcia
+    if (file) {
+        discordData.append("file", file, file.name);
+    }
+
+    try {
+        const response = await fetch(webhookURL, {
+            method: "POST",
+            body: discordData
+        });
+
+        if (response.ok) {
+            alert("Dziękuję za zgłoszenie kochana! ❤️");
+            form.reset();
+        } else {
+            console.error(response.statusText);
+            alert("Coś poszło nie tak przy wysyłaniu...");
+        }
+    } catch (err) {
+        console.error(err);
+        alert("Błąd sieci przy wysyłaniu danych!");
+    }
+}
+</script>
+
+
+</body>
+</html>
